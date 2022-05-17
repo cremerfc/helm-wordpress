@@ -1,0 +1,22 @@
+apiVersion: kots.io/v1beta1
+kind: Application
+metadata:
+  name: helm-wordpress
+spec:
+  title: Helm Wordpress
+  icon: https://support.io/img/logo.png
+  releaseNotes: These are our release notes
+  allowRollback: true
+  kubectlVersion: latest
+  kustomizeVersion: latest
+  targetKotsVersion: "1.70.0"
+  minKotsVersion: "1.60.0"
+  requireMinimalRBACPrivileges: false
+  ports:
+    - serviceName: web
+      servicePort: 9000
+      localPort: 9000
+      applicationUrl: "http://web"
+  statusInformers:
+    - deployment/wordpress
+  
