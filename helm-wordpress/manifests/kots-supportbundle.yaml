@@ -20,7 +20,6 @@ spec:
   analyzers:
     - mysql:
         exclude: repl{{ ConfigOptionEquals "option_select" "embedded_db" }}
-        strict: repl{{ ConfigOptionEquals "option_select" "external_db" }}
         checkName: External MariaDB Connection Check
         collectorName: mariadb
         outcomes:
