@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: helm-wordpress
 spec:
-  title: Helm Wordpress
+  title: Wordpress Admin Console
   releaseNotes: These are our release notes
   allowRollback: true
   kubectlVersion: latest
