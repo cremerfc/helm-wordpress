@@ -16,7 +16,10 @@ spec:
         namespace: default
         command: ["ping"]
         args: ["-w", "10", "-c", "10", "-i", "0.3", '{{repl ConfigOption "smtp_host"}}']
-        imagePullPolicy: IfNotPresent    
+        imagePullPolicy: IfNotPresent 
+    - data:
+        name: static/data.txt
+        data: '{{repl Distribution}}'   
   analyzers:
     - mysql:
         exclude: repl{{ ConfigOptionEquals "option_select" "embedded_db" }}

@@ -25,6 +25,9 @@ spec:
       auth:
         rootPassword: '{{repl ConfigOption "wordpress-db-secret"}}'
       enabled:  repl{{ if ConfigOptionEquals "option_select" "embedded_db"}}truerepl{{ else}}falserepl{{end}}
+    service:
+      ports:
+        http: 8080  
     
       
     
